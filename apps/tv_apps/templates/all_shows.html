@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>All Shows</title>
+</head>
+<style>
+    .contain {
+        margin-left: 300px;
+        max-width: 700px;
+    }
+</style>
+
+<body>
+    <div class="contain">
+        <table class="table table-striped">
+            <thead>
+                <h1>All Shows</h1>
+                <tr>
+                    <th scope="col">ID</th>
+                    <th scope="col">Title</th>
+                    <th scope="col">Network</th>
+                    <th scope="col">Release Date</th>
+                    <th scope="col">Actions</th>
+                </tr>
+            </thead>
+            {% for show in all_shows %}
+            <tbody>
+                <tr>
+                    <th scope="row">{{show.id}}</th>
+                    <td>{{show.title}}</td>
+                    <td>{{show.network}}</td>
+                    <td>{{show.release_date}}</td>
+                    <td>
+                        <a href="Show">Show</a>|<a href="/edit/{{show.id}}">Edit</a>|<a href="/delete/{{show.id}}">Delete</a>
+                    </td>
+                </tr>
+            </tbody>
+            {% endfor %}
+        </table>
+
+    </div>
+</body>
+
+</html
